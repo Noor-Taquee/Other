@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Varela+Round&display=swap');
+
+:root {
+  --dark-color: rgb(0, 200, 255);
+  --dark-active-background-color: rgba(0, 200, 255, 0.3);
+  --dark-background-color: rgba(255, 255, 255, 0.07);
+  --dark-border-color: rgba(0, 200, 255, 0.15);
+  --light-background-color: rgb(0, 200, 255);
+  --light-active-background-color: rgb(0, 170, 225);
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Sans-Serif;
+}
+
+body::-webkit-scrollbar,
+body p::-webkit-scrollbar,
+body div::-webkit-scrollbar {
+  display: none;
+}
+
+body,
+div,
+p,
+i,
+button {
+  font-family: "Comfortaa";
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+#app {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#app.dark {
+  background-color: black;
+}
+
+#app.dark i,
+#app.dark p {
+  color: white;
+}
+
+#app.light {
+  background-color: white;
+}
+
+#app.light p,
+#app.light i {
+  color: black;
+}
+
+.top-bar {
+  flex-shrink: 0;
+  height: 7%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mode-toggle-div {
+  gap: 10px;
+  padding: 10px;
+  border-radius: 25px;
+  display: flex;
+}
+
+#app.dark .mode-toggle-div {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#app.light .mode-toggle-div {
+  border: 0.5px solid rgb(200, 200, 200);
+  background: transparent;
+}
+
+.top-bar button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.top-bar button i {
+  font-size: 20px;
+}
+
+.top-bar button .ripple-span {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mode-toggle-btn {
+  border: none;
+  background: transparent;
+}
+
+.options-btn {
+  padding: 10px;
+  border-radius: 25px;
+}
+
+#app.dark .options-btn {
+  border: 1px solid rgba(255 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#app.light .options-btn {
+  border: 0.5px solid rgb(200, 200, 200);
+  background: transparent;
+}
+
+#app.orange .mode-toggle-btn.active i {
+  color: rgb(250, 100, 0);
+}
+
+#app.green .mode-toggle-btn.active i {
+  color: rgb(180, 255, 50);
+}
+
+#app.blue .mode-toggle-btn.active i {
+  color: rgb(0, 200, 255);
+}
+
+#app.red .mode-toggle-btn.active i {
+  color: rgb(250, 100, 0);
+}
+
+.added-panel {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: fit-content;
+  width: 60%;
+  overflow: hidden;
+  margin: auto;
+  padding: 0 20px;
+  border-radius: 20px;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#app.dark .added-panel {
+  background: rgb(50, 50, 50);
+}
+
+#app.light .added-panel {
+  border: 0.5px solid rgb(200, 200, 200);
+  background: rgb(255, 255, 255);
+  box-shadow: 0 0 5px rgb(200, 200, 200);
+}
+
+.added-panel-header {
+  font: 600 25px "Comfortaa";
+}
+
+.option-panel-btn {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  gap: 15px;
+  border: none;
+  display: flex;
+  background: transparent;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.option-panel-btn p {
+  font: 500 16px "Comfortaa";
+}
+
+.option-panel-btn i {
+  font-size: 18px;
+}
+
+.added-panel-btn-div {
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.added-panel-btn-div button {
+  border: none;
+  background: transparent;
+}
+
+.added-panel-btn-div button p {
+  font: 500 16px "Comfortaa";
+}
+
+#option-panel {
+  z-index: 1;
+  top: 7%;
+  right: 20px;
+  bottom: auto;
+  left: auto;
+  width: 30%;
+  min-width: fit-content;
+  margin: 0;
+  padding: 0 15px;
+}
+
+#inner-app-tab-container {
+  flex-shrink: 0;
+  height: 93%;
+  width: 100%;
+}
+
+.inner-app-tab {
+  height: 100%;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}

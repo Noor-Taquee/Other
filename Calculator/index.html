@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="simpleCalculator.css">
+  <title>Calculator</title>
+</head>
+
+<body>
+  <div id="app" class="dark squircle blue">
+    <div class="top-bar">
+      <div class="mode-toggle-div">
+        <button class="mode-toggle-btn active">
+          <i class="ph-bold ph-calculator"></i>
+        </button>
+        <button class="mode-toggle-btn">
+          <i class="ph-bold ph-currency-dollar"></i>
+        </button>
+        <button class="mode-toggle-btn">
+          <i class="ph-bold ph-ruler"></i>
+        </button>
+        <button class="mode-toggle-btn">
+          <i class="ph-bold ph-atom"></i>
+        </button>
+      </div>
+      <button id="options-btn" class="options-btn ripple">
+        <i class="ph-bold ph-dots-three-vertical"></i>
+      </button>
+    </div>
+  
+    <div class="added-panel" id="option-panel">
+      <button id="theme-btn" class="option-panel-btn ripple">
+        <i class="ph-fill ph-paint-roller"></i>
+        <p>Theme</p>
+      </button>
+      <button id="palette-btn" class="option-panel-btn ripple">
+        <i class="ph-fill ph-palette"></i>
+        <p>Color palette</p>
+      </button>
+      <button id="shape-btn" class="option-panel-btn ripple">
+        <i class="ph-bold ph-cube"></i>
+        <p>Button shape</p>
+      </button>
+    </div>
+  
+    <div class="added-panel" id="theme-panel">
+      <p class="added-panel-header">Choose Theme</p>
+      <button id="light-btn-theme" class="option-panel-btn ripple">
+        <i id="light-icon" class="ph-bold ph-circle"></i>
+        <p>Light</p>
+      </button>
+      <button id="dark-btn-theme" class="option-panel-btn ripple">
+        <i id="dark-icon" class="ph-fill ph-radio-button"></i>
+        <p>Dark</p>
+      </button>
+      <div class="added-panel-btn-div">
+        <button id="cancel-btn-theme">
+          <p>cancel</p>
+        </button>
+        <button id="confirm-btn-theme">
+          <p>ok</p>
+        </button>
+      </div>
+    </div>
+  
+    <div class="added-panel" id="palette-panel">
+      <p class="added-panel-header">Choose Palette</p>
+      <button id="blue-btn-palette" class="option-panel-btn ripple">
+        <i id="blue-icon" class="ph-fill ph-radio-button"></i>
+        <p>Blue</p>
+      </button>
+      <button id="green-btn-palette" class="option-panel-btn ripple">
+        <i id="green-icon" class="ph-bold ph-circle"></i>
+        <p>Green</p>
+      </button>
+      <button id="orange-btn-palette" class="option-panel-btn ripple">
+        <i id="orange-icon" class="ph-bold ph-circle"></i>
+        <p>Orange</p>
+      </button>
+      <button id="monochrome-btn-palette" class="option-panel-btn ripple">
+        <i id="monochrome-icon" class="ph-bold ph-circle"></i>
+        <p>Monochrome</p>
+      </button>
+      <div class="added-panel-btn-div">
+        <button id="cancel-btn-palette">
+          <p>cancel</p>
+        </button>
+        <button id="confirm-btn-palette">
+          <p>ok</p>
+        </button>
+      </div>
+    </div>
+  
+    <div class="added-panel" id="shape-panel">
+      <p class="added-panel-header">Choose shape</p>
+      <button id="squircle-btn-shape" class="option-panel-btn ripple">
+        <i id="squircle-icon" class="ph-fill ph-radio-button"></i>
+        <p>Squircle</p>
+      </button>
+      <button id="circle-btn-shape" class="option-panel-btn ripple">
+        <i id="circle-icon" class="ph-bold ph-circle"></i>
+        <p>Circle</p>
+      </button>
+      <div class="added-panel-btn-div">
+        <button id="cancel-btn-shape">
+          <p>cancel</p>
+        </button>
+        <button id="confirm-btn-shape">
+          <p>ok</p>
+        </button>
+      </div>
+    </div>
+    
+    <div id="inner-app-tab-container">
+      <div id="simple-calculator" class="inner-app-tab" style="display: flex;">
+        <div class="expressionPanel">
+          <p class="expression" id="expression"></p>
+        </div>
+        
+        <div class="button-panel">
+          <div class="button-row">
+            <button class="panel-button operators ripple" onclick="clearExpression()">
+              <p>AC</p>
+            </button>
+            <button class="panel-button operators ripple">
+              <i class="ph-bold ph-percent"></i>
+            </button>
+            <button class="panel-button operators ripple" onclick="addToExpression('÷')">
+              <i class="ph-bold ph-divide"></i>
+            </button>
+            <button id="bn-backspace" class="panel-button operators ripple">
+              <i class="ph-bold ph-backspace"></i>
+            </button>
+          </div>
+          <div class="button-row">
+            <button class="panel-button numbers ripple" id="bn-1" onclick="addToExpression('1')">
+              <i class="ph-bold ph-number-one"></i>
+            </button>
+            <button class="panel-button numbers ripple" id="bn-2" onclick="addToExpression('2')">
+              <i class="ph-bold ph-number-two"></i>
+            </button>
+            <button class="panel-button numbers ripple" id="bn-3" onclick="addToExpression('3')">
+              <i class="ph-bold ph-number-three"></i>
+            </button>
+            <button class="panel-button operators ripple" id="bn-add" onclick="addToExpression('+')">
+              <i class="ph-bold ph-plus"></i>
+            </button>
+          </div>
+          <div class="button-row">
+            <button class="panel-button numbers ripple" id="bn-4" onclick="addToExpression('4')">
+              <i class="ph-bold ph-number-four"></i>
+            </button>
+            <button class="panel-button numbers ripple" id="bn-5" onclick="addToExpression('5')">
+              <i class="ph-bold ph-number-five"></i>
+            </button>
+            <button class="panel-button numbers ripple" id="bn-6" onclick="addToExpression('6')">
+              <i class="ph-bold ph-number-six"></i>
+            </button>
+            <button class="panel-button operators ripple" id="bn-sub" onclick="addToExpression('-')">
+              <i class="ph-bold ph-minus"></i>
+            </button>
+          </div>
+          <div class="button-row">
+            <button class="panel-button numbers ripple" id="bn-7" onclick="addToExpression('7')">
+              <i class="ph-bold ph-number-seven"></i>
+            </button>
+            <button class="panel-button numbers ripple" id="bn-8" onclick="addToExpression('8')">
+              <i class="ph-bold ph-number-eight"></i>
+            </button>
+            <button class="panel-button numbers ripple" id="bn-9" onclick="addToExpression('9')">
+              <i class="ph-bold ph-number-nine"></i>
+            </button>
+            <button class="panel-button operators ripple" id="bn-mul" onclick="addToExpression('×')">
+              <i class="ph-bold ph-x"></i>
+            </button>
+          </div>
+          <div class="button-row">
+            <button class="panel-button numbers ripple" onclick="addToExpression('.')">
+              <i class="ph-bold ph-dot"></i>
+            </button>
+            <button class="panel-button numbers ripple" onclick="addToExpression('0')">
+              <i class="ph-bold ph-number-zero"></i>
+            </button>
+            <button class="panel-button numbers ripple" onclick="addToExpression('(')">
+              <i class="ph-bold ph-brackets-round"></i>
+            </button>
+            <button class="panel-button operators ripple">
+              <i class="ph-bold ph-equals"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="currency-converter" class="inner-app-tab"></div>
+      <div id="length-converter" class="inner-app-tab"></div>
+      <div id="scientific-converter" class="inner-app-tab"></div>
+    </div>
+  </div>
+  <script>
+    let app = document.getElementById("app");
+  </script>
+  <script src="script.js"></script>
+  <script src="simpleCalculator.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+#app.green .panel-button {
+}
+
+.expressionPanel {
+  flex-shrink: 0;
+  flex-grow: 1;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.expressionPanel p {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  text-align: right;
+  white-space: nowrap;
+  font: 500 70px "Comfortaa";
+  margin: 0;
+  padding: 0 10px;
+}
+
+.button-panel {
+  flex-shrink: 0;
+  width: 100%;
+  margin: 0 0 20px 0;
+  padding: 0;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: transparent;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-span {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+
+#app.dark .ripple-span {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+#app.light .ripple-span {
+  background-color: rgba(25, 25, 25, 0.7);
+}
+
+.panel-button {
+  cursor: pointer;
+  height: 23vw;
+  max-height: 12vh;
+  width: 23vw;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  transition: all 0.1s ease-out;
+}
+
+#app.squircle .panel-button {
+  border-radius: 5vw;
+}
+
+#app.circle .panel-button {
+  border-radius: 12.5vw;
+}
+
+.panel-button p {
+  font: 500 40px "Comfortaa";
+  margin: 0;
+}
+
+.panel-button i {
+  font-size: 40px;
+}
+
+#app.dark .numbers {
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+#app.dark .numbers .ripple-span {
+  background-color: rgb(255, 255, 255, 0.3);
+}
+
+#app.light .numbers {
+  border: 1.5px solid rgba(230, 230, 230);
+  background-color: rgba(230, 230, 230);
+}
+
+#app.light .numbers .ripple-span {
+  background-color: rgb(180, 180, 180);
+}
+
+#app.dark.blue .operators i,
+#app.dark.blue .operators p {
+  color: var(--dark-color);
+}
+
+#app.dark.blue .operators {
+  border: 1.5px solid var(--dark-border-color);
+  background-color: var(--dark-background-color);
+}
+
+#app.dark.blue .operators .ripple-span {
+  background-color: var(--dark-active-background-color);
+}
+
+#app.light.blue .operators {
+  border: 1.5px solid var(--light-background-color);
+  background-color: var(--light-background-color);
+}
+
+#app.light.blue .operators .ripple-span {
+  background-color: var(--light-active-background-color);
+}
+
+#app.dark.orange .operators i,
+#app.dark.orange .operators p {
+  color: rgb(255, 100, 0);
+}
+
+#app.dark.orange .operators {
+  border: 1.5px solid rgba(255, 100, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+#app.dark.orange .operators .ripple-span {
+  background-color: rgb(250, 120, 0, 0.3);
+}
+
+#app.light.orange .operators {
+  border: 1.5px solid rgb(255, 150, 0);
+  background-color: rgb(255, 150, 0);
+}
+
+#app.light.orange .operators .ripple-span {
+  background-color: rgb(220, 130, 0);
+}
+
+#app.dark.green .operators i,
+#app.dark.green .operators p {
+  color: rgb(180, 255, 50);
+}
+
+#app.dark.green .operators {
+  border: 1.5px solid rgba(180, 255, 50, 0.15);
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+#app.dark.green .operators .ripple-span {
+  background-color: rgb(180, 255, 50, 0.3);
+}
+
+#app.light.green .operators {
+  border: 1.5px solid rgb(180, 255, 50);
+  background-color: rgb(180, 255, 50);
+}
+
+#app.light.green .operators .ripple-span {
+  background-color: rgb(150, 225, 20);
+}
+
+#app.dark.monochrome .operators i,
+#app.dark.monochrome .operators p {
+  color: rgb(220, 220, 220);
+}
+
+#app.dark.monochrome .operators {
+  border: 1.5px solid rgba(220, 220, 220, 0.15);
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+#app.dark.monochrome .operators .ripple-span {
+  background-color: rgb(220, 220, 220, 0.3);
+}
+
+#app.light.monochrome .operators {
+  border: 1.5px solid rgb(180, 180, 180);
+  background-color: rgb(180, 180, 180);
+}
+
+#app.light.monochrome .operators .ripple-span {
+  background-color: rgb(150, 150, 150);
+}

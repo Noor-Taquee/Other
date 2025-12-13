@@ -1,0 +1,334 @@
+@keyframes appear {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: sans-serif;
+  background-color: white;
+}
+
+#controlPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  height: 5%;
+  width: 90%;
+  margin: 0;
+  padding: 2.5%;
+  border: none;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#gameName {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 0.3rem;
+}
+#gameName p {
+  cursor: default;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: black;
+  margin: 0;
+}
+#name1 {
+  animation: appear 1s ease-in-out;
+  animation-delay: 0;
+}
+#name2 {
+  animation: appear 1s ease-in-out;
+  animation-delay: 0.2s;
+}
+#name3 {
+  animation: appear 1s ease-in-out;
+  animation-delay: 0.4s;
+}
+#seperator {
+  cursor: default;
+  font-size: 2rem;
+  margin: 0;
+}
+#accountPanel {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: fit-content;
+  margin: 0;
+  padding: 0;
+  gap: 0.4rem;
+}
+#preAccountPanel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#bn_login {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: agency FB;
+  font-size: 1rem;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(70, 150, 200);
+  height: 1.7rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-out;
+}
+#bn_login:hover {
+  background-color: rgb(99, 99, 200);
+}
+#bn_login:active {
+  color: purple;
+}
+#bn_account {
+  cursor: pointer;
+  font-size: 1.5rem;
+  background: transparent;
+  background-image: url("accountPic.jpg");
+  background-size: cover;
+  height: 2.5rem;
+  width: 2.5rem;
+  border: none;
+  border-radius: 50%;
+}
+#accountInfoPanel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 80vh;
+  width: 80vw;
+  max-width: 25rem;
+  margin: auto;
+  gap: 2rem;
+  border: none;
+  border-radius: 3rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+#accountInfoDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+#accountPic {
+  background-image: url("accountPic.jpg");
+  background-size: cover;
+  width: 8rem;
+  height: 8rem;
+  border: none;
+  border-radius: 50%;
+}
+#accountName {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
+#statsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  gap: 5%;
+}
+#buttonDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+}
+#bnClose {
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+  background-color: rgba(255, 0, 0, 0.7);
+  height: 3.5rem;
+  width: 8rem;
+  margin-bottom: 0;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px black;
+  transition: all 0.3s ease-out;
+}
+#bnClose:hover {
+  background-color: red;
+}
+#attemptPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  gap: 0.5rem;
+}
+.attemptRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  gap: 0.3rem;
+}
+.attemptRow p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.4rem;
+  width: 2.5rem;
+  margin: 0;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+}
+#attemptBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid black;
+  border-radius: 20%;
+}
+#resultPanel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#resultMessage {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+}
+#touchPanel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+#touchPanel button {
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+  background-color: green;
+  border: none;
+  border-radius: 0.4rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition: transform 0.1s ease-out;
+}
+#touchPanel button:hover {
+  background-color: darkgreen;
+}
+#touchPanel button:active {
+  transform: scale(0.9);
+}
+#keyboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  gap: 0.7rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 1.2rem;
+  box-shadow: 0 0 5px grey;
+}
+#keyboard div {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+#keyboard button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: black;
+  background-color: rgb(230, 230, 230);
+  width: 2.3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0.35rem;
+  transition: all 0.2s ease-out;
+}
+#keyboard button:active {
+  background-color: rgb(200, 200, 200);
+  transform: scale(0.9);
+}

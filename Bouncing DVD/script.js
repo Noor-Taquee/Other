@@ -95,13 +95,10 @@ function createDvd() {
 }
 
 function checkOrientation() {
-    console.log("O");
     if (document.body.offsetHeight > document.body.offsetWidth) {
-        console.log("|");
         app.classList.remove("horizontal");
         app.classList.add("vertical");
     } else {
-        console.log("_");
         app.classList.remove("vertical");
         app.classList.add("horizontal");
     }
