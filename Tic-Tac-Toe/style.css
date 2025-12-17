@@ -1,0 +1,144 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    flex-shrink: 0;
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#app.light {
+    background: white;
+}
+
+#app.dark {
+    background: black;
+}
+
+#app.light i,
+#app.light p {
+    color: rgb(50, 50, 50);
+}
+
+#app.dark i,
+#app.dark p {
+    color: white;
+}
+
+.inner-app-tab {
+    flex-shrink: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#play-btn {
+    height: 80px;
+    width: 250px;
+    margin: auto;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(to left, rgb(0, 100, 250), rgb(160, 0, 250));
+}
+
+#play-btn p {
+    font: 900 30px Arial;
+    margin: 0;
+    color: black !important;
+}
+
+.top-bar {
+    height: 55px;
+    width: 100%;
+    border: none;
+    border-bottom: 0.5px solid rgb(150, 150, 150);
+}
+
+.top-bar p {
+    margin: 0;
+    font: 700 30px Arial;
+}
+
+.inner-app-tab .content {
+    flex-shrink: 0;
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#playing-box {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+#playing-box div {
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.box-row {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#app.light .box-row {
+    border-color: black;
+}
+
+#app.dark .box-row {
+    border-color: white;
+}
+
+.box-row:nth-child(1) {
+    border: none;
+    border-bottom: 3px solid white;
+}
+
+.box-row:nth-child(2) {
+    border: none;
+    border-bottom: 3px solid white;
+}
+
+.box {
+    display: flex;
+    height: 25vw;
+    width: 25vw;
+    border: none;
+}
+
+#app.light .box {
+    border-color: black;
+}
+
+#app.dark .box {
+    border-color: white;
+}
+
+.row-1:nth-child(1),
+.row-1:nth-child(2),
+.row-2:nth-child(1),
+.row-2:nth-child(2),
+.row-3:nth-child(1),
+.row-3:nth-child(2) {
+    border-right: 3px solid white;
+}

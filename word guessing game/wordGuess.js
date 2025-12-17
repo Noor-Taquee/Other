@@ -52,12 +52,12 @@ let targetWord = "PLAN";
 let wordLength = 4;
 let totalAttempts = 6;
 let currentAttemptWord = "";
-let attemptBoxList1 = [attempt11, attempt12, attempt13, attempt14];
-let attemptBoxList2 = [attempt21, attempt22, attempt23, attempt24];
-let attemptBoxList3 = [attempt31, attempt32, attempt33, attempt34];
-let attemptBoxList4 = [attempt41, attempt42, attempt43, attempt44];
-let attemptBoxList5 = [attempt51, attempt52, attempt53, attempt54];
-let attemptBoxList6 = [attempt61, attempt62, attempt63, attempt64];
+// let attemptBoxList1 = [attempt11, attempt12, attempt13, attempt14];
+// let attemptBoxList2 = [attempt21, attempt22, attempt23, attempt24];
+// let attemptBoxList3 = [attempt31, attempt32, attempt33, attempt34];
+// let attemptBoxList4 = [attempt41, attempt42, attempt43, attempt44];
+// let attemptBoxList5 = [attempt51, attempt52, attempt53, attempt54];
+// let attemptBoxList6 = [attempt61, attempt62, attempt63, attempt64];
 let attemptList = [
   attemptBoxList1,
   attemptBoxList2,

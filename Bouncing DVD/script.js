@@ -1,6 +1,16 @@
 const app = document.getElementById("app");
 
-const playBtn = document.getElementById("start")
+const slowBtn = document.getElementById("slow");
+slowBtn.addEventListener("click", () => {
+    speed -= 0.25;
+})
+
+const fastBtn = document.getElementById("fast");
+fastBtn.addEventListener("click", () => {
+    speed += 0.5;
+})
+
+const playBtn = document.getElementById("start");
 playBtn.addEventListener("click", start);
 const playIcon = document.getElementById("playIcon");
 
@@ -34,12 +44,14 @@ let x = 0;
 let y = 0;
 let dx = 1;
 let dy = 1;
-const speed = 2;
-const btnWidth = btn.offsetWidth;
-const btnHeight = btn.offsetHeight;
+let speed = 2;
+let btnWidth = btn.offsetWidth;
+let btnHeight = btn.offsetHeight;
 
 let maxX, maxY;
 function claculateBoundary() {
+    btnWidth = btn.offsetWidth;
+    btnHeight = btn.offsetHeight;
     maxX = document.getElementById("dvd-area").offsetWidth - btnWidth;
     maxY = document.getElementById("dvd-area").offsetHeight - btnHeight;
 }

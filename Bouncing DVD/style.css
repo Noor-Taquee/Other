@@ -1,0 +1,112 @@
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    background: black;
+    font-family: system-ui, sans-serif;
+}
+
+button,
+input {
+    -webkit-tap-highlight-color: transparent;
+}
+
+#app {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+}
+
+#app.vertical {
+    flex-direction: column;
+}
+
+#app.horizontal {
+    flex-direction: row-reverse;
+}
+
+#dvd-area {
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px dashed grey;
+}
+
+.dvd {
+    position: absolute;
+    padding: 0;
+    border: none;
+}
+
+.dvd-logo-svg {
+    padding: 0;
+    fill: rgb(255, 255, 255);
+}
+#app.vertical .dvd-logo-svg {
+    height: fit-content;
+    width: fit-content;
+}
+#dvd-paths {
+    margin: 0;
+}
+
+.dvd p {
+    height: 110px;
+    width: 250px;
+    margin: 0;
+    font: 900 50px Arial;
+    background-image: url(Icons/logo-01.svg);
+    background-size: cover;
+}
+
+.bottom-bar {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#app.vertical .bottom-bar {
+    height: 10%;
+    width: 100%;
+}
+
+#app.horizontal .bottom-bar {
+    height: 100%;
+    width: 6%;
+    min-width: 70px;
+    flex-direction: column;
+}
+
+.nav-bar-button {
+    cursor: pointer;
+    width: fit-content;
+    border: none;
+    padding: 10px 0;
+    margin: 0 20px;
+    background: transparent;
+}
+
+.nav-bar-button i {
+    color: white;
+    font-size: 30px;
+}
