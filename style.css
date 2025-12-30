@@ -1,17 +1,18 @@
-body {
-  height: 100vh;
-  width: 100vw;
-  box-sizing: border-box;
-  padding: 20px;
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
   margin: 0;
 }
 
-#app {
-  height: 100%;
-  width: 100%;
+#app-wrapper {
+  height: 100dvh;
+  width: 100dvw;
+  box-sizing: border-box;
+  padding: 15px;
 }
 
-.website-container {
+#website-container {
   flex-grow: 1;
   width: 100%;
   box-sizing: border-box;
@@ -21,7 +22,7 @@ body {
   align-items: center;
   gap: 20px;
 }
-.website-container::-webkit-scrollbar {
+#website-container::-webkit-scrollbar {
   display: none;
 }
 
