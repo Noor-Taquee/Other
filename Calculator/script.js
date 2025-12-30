@@ -1,6 +1,12 @@
+const app = document.getElementById("app");
+
+// #region Tools panel
+const toolsPanel = document.getElementById("tools-panel");
+// #endregion Tools panel
+
 // #region Option panel
-let optionPanel = document.getElementById("option-panel");
-let bnOption = document.getElementById("options-btn");
+const optionPanel = document.getElementById("option-panel");
+const bnOption = document.getElementById("options-btn");
 bnOption.addEventListener("click", showOptionPanel);
 
 function showOptionPanel() {
@@ -40,18 +46,18 @@ let appliedThemeI = null;
 let selectedTheme = "dark";
 let selectedThemeI = null;
 
-let ThemePanel = document.getElementById("theme-panel");
-let bnTheme = document.getElementById("theme-btn");
+const ThemePanel = document.getElementById("theme-panel");
+const bnTheme = document.getElementById("theme-btn");
 bnTheme.addEventListener("click", showThemePanel);
 
-let cancelTheme = document.getElementById("cancel-btn-theme");
+const cancelTheme = document.getElementById("cancel-btn-theme");
 cancelTheme.addEventListener("click", hideThemePanel);
 
-let confirmTheme = document.getElementById("confirm-btn-theme");
+const confirmTheme = document.getElementById("confirm-btn-theme");
 confirmTheme.addEventListener("click", applyTheme);
 
-let bnDark = document.getElementById("dark-btn-theme");
-let darkIcon = document.getElementById("dark-icon");
+const bnDark = document.getElementById("dark-btn-theme");
+const darkIcon = document.getElementById("dark-icon");
 appliedThemeI = darkIcon;
 selectedThemeI = darkIcon;
 bnDark.addEventListener("click", () => {
@@ -61,8 +67,8 @@ bnDark.addEventListener("click", () => {
   selectedThemeI.className = "ph-fill ph-radio-button";
 });
 
-let bnLight = document.getElementById("light-btn-theme");
-let lightIcon = document.getElementById("light-icon");
+const bnLight = document.getElementById("light-btn-theme");
+const lightIcon = document.getElementById("light-icon");
 bnLight.addEventListener("click", () => {
   selectedThemeI.className = "ph-bold ph-circle";
   selectedTheme = "light";
@@ -121,18 +127,18 @@ let selectedPalette = "blue";
 let selectedPaletteI = null;
 let lastPalette = "blue";
 
-let PalettePanel = document.getElementById("palette-panel");
-let bnPalette = document.getElementById("palette-btn");
+const PalettePanel = document.getElementById("palette-panel");
+const bnPalette = document.getElementById("palette-btn");
 bnPalette.addEventListener("click", showPalettePanel);
 
-let cancelPalette = document.getElementById("cancel-btn-palette");
+const cancelPalette = document.getElementById("cancel-btn-palette");
 cancelPalette.addEventListener("click", hidePalettePanel);
 
-let confirmPalette = document.getElementById("confirm-btn-palette");
+const confirmPalette = document.getElementById("confirm-btn-palette");
 confirmPalette.addEventListener("click", applyPalette);
 
-let bnBlue = document.getElementById("blue-btn-palette");
-let blueIcon = document.getElementById("blue-icon");
+const bnBlue = document.getElementById("blue-btn-palette");
+const blueIcon = document.getElementById("blue-icon");
 selectedPaletteI = blueIcon;
 appliedPaletteI = blueIcon;
 bnBlue.addEventListener("click", () => {
@@ -142,8 +148,8 @@ bnBlue.addEventListener("click", () => {
   selectedPaletteI.className = "ph-fill ph-radio-button";
 });
 
-let bnGreen = document.getElementById("green-btn-palette");
-let greenIcon = document.getElementById("green-icon");
+const bnGreen = document.getElementById("green-btn-palette");
+const greenIcon = document.getElementById("green-icon");
 bnGreen.addEventListener("click", () => {
   selectedPaletteI.className = "ph-bold ph-circle";
   selectedPalette = "green";
@@ -151,8 +157,8 @@ bnGreen.addEventListener("click", () => {
   selectedPaletteI.className = "ph-fill ph-radio-button";
 });
 
-let bnOrange = document.getElementById("orange-btn-palette");
-let orangeIcon = document.getElementById("orange-icon");
+const bnOrange = document.getElementById("orange-btn-palette");
+const orangeIcon = document.getElementById("orange-icon");
 bnOrange.addEventListener("click", () => {
   selectedPaletteI.className = "ph-bold ph-circle";
   selectedPalette = "orange";
@@ -160,8 +166,8 @@ bnOrange.addEventListener("click", () => {
   selectedPaletteI.className = "ph-fill ph-radio-button";
 });
 
-let bnMonochrome = document.getElementById("monochrome-btn-palette");
-let monochromeIcon = document.getElementById("monochrome-icon");
+const bnMonochrome = document.getElementById("monochrome-btn-palette");
+const monochromeIcon = document.getElementById("monochrome-icon");
 bnMonochrome.addEventListener("click", () => {
   selectedPaletteI.className = "ph-bold ph-circle";
   selectedPalette = "monochrome";
@@ -219,18 +225,18 @@ let appliedShapeI = null;
 let selectedShape = "squircle";
 let selectedShapeI = null;
 
-let ShapePanel = document.getElementById("shape-panel");
-let bnShape = document.getElementById("shape-btn");
+const ShapePanel = document.getElementById("shape-panel");
+const bnShape = document.getElementById("shape-btn");
 bnShape.addEventListener("click", showShapePanel);
 
-let cancelShape = document.getElementById("cancel-btn-shape");
+const cancelShape = document.getElementById("cancel-btn-shape");
 cancelShape.addEventListener("click", hideShapePanel);
 
-let confirmShape = document.getElementById("confirm-btn-shape");
+const confirmShape = document.getElementById("confirm-btn-shape");
 confirmShape.addEventListener("click", applyShape);
 
-let bnSquircle = document.getElementById("squircle-btn-shape");
-let squircleIcon = document.getElementById("squircle-icon");
+const bnSquircle = document.getElementById("squircle-btn-shape");
+const squircleIcon = document.getElementById("squircle-icon");
 appliedShapeI = squircleIcon;
 selectedShapeI = squircleIcon;
 bnSquircle.addEventListener("click", () => {
@@ -240,8 +246,8 @@ bnSquircle.addEventListener("click", () => {
   selectedShapeI.className = "ph-fill ph-radio-button";
 });
 
-let bnCircle = document.getElementById("circle-btn-shape");
-let circleIcon = document.getElementById("circle-icon");
+const bnCircle = document.getElementById("circle-btn-shape");
+const circleIcon = document.getElementById("circle-icon");
 bnCircle.addEventListener("click", () => {
   selectedShapeI.className = "ph-bold ph-circle";
   selectedShape = "circle";

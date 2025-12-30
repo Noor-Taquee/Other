@@ -6,29 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/Calculator/style.css">
   <link rel="stylesheet" href="simpleCalculator.css">
-  <title>Calculator</title>
+  <link rel="icon" href="/src/favicon.ico">
+  <title>Simple Calculator</title>
 </head>
 
-<body>
-  <div id="app" class="dark squircle blue">
+<body id="app" class="dark squircle blue">
+  <div id="app-wrapper">
     <div class="top-bar">
-      <div class="mode-toggle-div">
-        <button class="mode-toggle-btn active">
+      <div id="tools-panel" class="mode-toggle-div">
+        <a href="/Calculator/Simple calculator/index.html" id="simple-calculator-btn" class="toggle active">
           <i class="ph-bold ph-calculator"></i>
-        </button>
-        <button class="mode-toggle-btn">
+        </a>
+        <a href="/Calculator/Currency converter/index.html" id="currency-converter" class="toggle">
           <i class="ph-bold ph-currency-dollar"></i>
-        </button>
-        <button class="mode-toggle-btn">
-          <i class="ph-bold ph-ruler"></i>
-        </button>
-        <button class="mode-toggle-btn">
+        </a>
+        <a href="/Calculator/unit converter/index.html" id="length-converter" class="toggle">
+          <i class="ph-bold ph-swap"></i>
+        </a>
+        <a id="scientific-calculator" class="toggle">
           <i class="ph-bold ph-atom"></i>
-        </button>
+        </a>
       </div>
-      <button id="options-btn" class="options-btn ripple">
+      <button id="options-btn" class="options-btn ripple toggle">
         <i class="ph-bold ph-dots-three-vertical"></i>
       </button>
     </div>
@@ -197,13 +198,10 @@
       </div>
       <div id="currency-converter" class="inner-app-tab"></div>
       <div id="length-converter" class="inner-app-tab"></div>
-      <div id="scientific-converter" class="inner-app-tab"></div>
+      <div id="scientific-calculator" class="inner-app-tab"></div>
     </div>
   </div>
-  <script>
-    let app = document.getElementById("app");
-  </script>
-  <script src="script.js"></script>
+  <script src="/Calculator/script.js"></script>
   <script src="simpleCalculator.js"></script>
 </body>
 

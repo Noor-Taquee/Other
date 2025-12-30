@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Varela+Round&display=swap');
 
-:root {
-  --dark-color: rgb(0, 200, 255);
-  --dark-active-background-color: rgba(0, 200, 255, 0.3);
-  --dark-background-color: rgba(255, 255, 255, 0.07);
-  --dark-border-color: rgba(0, 200, 255, 0.15);
-  --light-background-color: rgb(0, 200, 255);
-  --light-active-background-color: rgb(0, 170, 225);
-}
-
+/* #region animations */
 @keyframes appear {
   0% {
     transform: scale(0.8);
@@ -37,57 +29,99 @@
     opacity: 0;
   }
 }
+/* #endregion animations */
 
-body {
-  height: 100vh;
-  width: 100vw;
+/* #region variables */
+.dark {
+  --primary-border-color: #505050;
+  --primary-bg: #000000;
+  --secondary-bg: #252525;
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #d1d1d1;
+  --ripple-color: #ffffff1a;
+}
+
+.light {
+  --primary-border-color: #858585;
+  --primary-bg: #ffffff;
+  --secondary-bg: #d1d1d1;
+  --primary-text-color: #000000;
+  --secondary-text-color: #252525;
+  --ripple-color: #191919b3;
+}
+
+.dark.blue {
+  --button-border-color: #00c8ff4d;
+  --button-bg: #00c8ff07;
+  --button-text-color: #00c8ff;
+  --button-ripple-color: #00c8ff4d;
+}
+.light.blue {
+  --button-border-color: #00c8ff;
+  --button-bg: #00c8ff;
+  --button-text-color: #000;
+  --button-ripple-color: #00aae1;
+}
+
+.dark.green {
+  --button-border-color: #00c8ff4d;
+  --button-bg: #00c8ff07;
+  --button-text-color: #00c8ff;
+  --button-ripple-color: #00c8ff4d;
+}
+.light.green {
+  --button-border-color: #00c8ff;
+  --button-bg: #00c8ff;
+  --button-text-color: #000;
+  --button-ripple-color: #00aae1;
+}
+
+.dark.orange {
+  --button-border-color: #00c8ff4d;
+  --button-bg: #00c8ff07;
+  --button-text-color: #00c8ff;
+  --button-ripple-color: #00c8ff4d;
+}
+.light.orange {
+  --button-border-color: #00c8ff;
+  --button-bg: #00c8ff;
+  --button-text-color: #000;
+  --button-ripple-color: #00aae1;
+}
+
+/* #endregion variables */
+
+
+html, body {
+  height: 100%;
+  width: 100%;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  font-family: Sans-Serif;
+  font-family: "Comfortaa";
+  background: var(--primary-bg);
 }
 
-body::-webkit-scrollbar,
-body p::-webkit-scrollbar,
-body div::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
 }
 
-body,
-div,
-p,
-i,
-button {
-  font-family: "Comfortaa";
+* {
   -webkit-tap-highlight-color: transparent;
   transition: background 0.5s ease, color 0.5s ease;
 }
 
-#app {
+i, p {
+  color: var(--primary-text-color);
+}
+
+#app-wrapper {
   position: relative;
-  height: 100%;
-  width: 100%;
+  height: 100dvh;
+  width: 100dvw;
   overflow: hidden;
   box-sizing: border-box;
-}
-
-#app.dark {
-  background-color: black;
-}
-
-#app.dark i,
-#app.dark p {
-  color: white;
-}
-
-#app.light {
-  background-color: white;
-}
-
-#app.light p,
-#app.light i {
-  color: black;
 }
 
 .top-bar {
@@ -106,67 +140,47 @@ button {
   padding: 10px;
   border-radius: 25px;
   display: flex;
-}
-
-#app.dark .mode-toggle-div {
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--primary-border-color);
   background: rgba(255, 255, 255, 0.1);
 }
-
-#app.light .mode-toggle-div {
-  border: 0.5px solid rgb(200, 200, 200);
-  background: transparent;
+.mode-toggle-div a {
+  text-decoration: none;
 }
 
-.top-bar button {
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-span {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+  background: var(--ripple-color);
+}
+
+.toggle {
+  border: none;
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
 }
 
-.top-bar button i {
+.toggle i {
   font-size: 20px;
-}
-
-.top-bar button .ripple-span {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.mode-toggle-btn {
-  border: none;
-  background: transparent;
 }
 
 .options-btn {
   padding: 10px;
+  border: 0.5px solid var(--primary-border-color);
   border-radius: 25px;
 }
 
-#app.dark .options-btn {
-  border: 1px solid rgba(255 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-#app.light .options-btn {
-  border: 0.5px solid rgb(200, 200, 200);
-  background: transparent;
-}
-
-#app.orange .mode-toggle-btn.active i {
-  color: rgb(250, 100, 0);
-}
-
-#app.green .mode-toggle-btn.active i {
-  color: rgb(180, 255, 50);
-}
-
-#app.blue .mode-toggle-btn.active i {
-  color: rgb(0, 200, 255);
-}
-
-#app.red .mode-toggle-btn.active i {
-  color: rgb(250, 100, 0);
+.mode-toggle-div .active i {
+  color: var(--button-bg) !important;
 }
 
 .added-panel {
